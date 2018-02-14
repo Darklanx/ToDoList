@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCompleteTest</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="./jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="./jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div>
+        <div class="input-group" style="text-align: center;margin:70px 50px 50px 100px">
+            <input type="text" name="input" id="input-ToDos" style="width:70%;">
+            <span class="input-group-btn"> 
+            	<button class="btn btn-primary" id="create" type="button">create</button> 
+			</span>
+        </div>
+        <div class="ToDos container">
+            <h2>To Dos:</h2>
+            <table class="table table-hover" id="table-ToDos">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="./AutocompleteDate.js"></script>
+</body>
+
+</html>
