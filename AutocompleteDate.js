@@ -1,29 +1,20 @@
 var fs = require("fs");
 
 loadToDos();
+
+function catchDate(text) {
+    var regdat = /\b(([1][0-2])|([0]?[1-9]))[\/](([0-2][1-9])|([1-9])|([3][0-1]))\b/i;
+    if(text.match(regdat) != null)
+        return text.match(regdat)[0];
+    else 
+        return null
+}
 $("#create").click(function() {
     let input_job = $("#input-ToDos").val();
-
-    let findingPos = 0; // use to handle case of multi-slashes
-    let slashIndex = input_job.indexOf("/", findingPos);
-    let date = "";
-    if (slashIndex != -1) {
-        let prevSliceIndex = input_job.lastIndexOf(" ", slashIndex) + 1;
-        let endSliceIndex = input_job.indexOf(" ", slashIndex);
-        if (endSliceIndex == -1) {
-            endSliceIndex = input_job.length;
-        }
-        date += input_job.slice(prevSliceIndex, endSliceIndex);
-        let hyperDate = '<a href="#">' + date + '</a>';
-        input_job = input_job.replace(date, hyperDate);
+    if (catchDate(input_job) != null) {
+        let hyperDate = '<a href="#">' + catchDate(input_job) + '</a>';
+        input_job = input_job.replace(catchDate(input_job), hyperDate);
     }
-
-    //constructing hyperdate in append
-
-
-    // $("#table-ToDos").find("tbody").prepend(
-    //     $('<tr>').append($('<td>').append(input_job))
-    // );
     append_ToDo_toTable(input_job);
     //adding to our log
     fs.appendFile("ToDos.txt", input_job + '\n', function(err) {
@@ -36,7 +27,6 @@ function append_ToDo_toTable(text) {
     $("#table-ToDos").find("tbody").prepend(
         $('<tr>').append($('<td>').append(text))
     );
-
 }
 
 function loadToDos() {
@@ -44,7 +34,6 @@ function loadToDos() {
     if (fs.existsSync(filename)) {
         let data = fs.readFileSync(filename, 'utf8').split('\n');
         data.forEach((element, index) => {
-
             if (element.length > 0)
                 append_ToDo_toTable(element);
         });
