@@ -1,5 +1,5 @@
 var fs = require("fs");
-
+$("#input-ToDos").focus();
 loadToDos();
 
 function catchDate(text) {
@@ -21,7 +21,17 @@ $("#create").click(function() {
         if (err)
             console.log(err);
     });
+    $("#input-ToDos").val("");
 });
+//keyboard 'Enter' 
+$(document).keypress(function (e) {
+ var key = e.which;
+ if(key == 13)  // the enter key code
+  {
+    $("#create").click();
+    return false;  
+  }
+}); 
 
 function append_ToDo_toTable(text) {
     $("#table-ToDos").find("tbody").prepend(
