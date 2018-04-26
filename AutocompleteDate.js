@@ -10,6 +10,8 @@ function catchDate(text) {
         return null
 }
 $("#create").click(function() {
+    if( $("#input-ToDos").val() == "")
+        return; // check if has value
     let input_job = $("#input-ToDos").val();
     if (catchDate(input_job) != null) {
         let hyperDate = '<a href="#">' + catchDate(input_job) + '</a>';
@@ -24,7 +26,7 @@ $("#create").click(function() {
     $("#input-ToDos").val("");
 });
 //keyboard 'Enter' 
-$(document).keypress(function (e) {
+$("#input-ToDos").on("keydown",function (e) {
  var key = e.which;
  if(key == 13)  // the enter key code
   {
