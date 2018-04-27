@@ -1,14 +1,24 @@
 {
-	"name": "ToDoList",
-	"version": "0.1.0",
-	"main": "main.js",
-	"dependencies": {
-		"bootstrap": "4.0.0",
-		"electron-debug": "^1.5.0",
-		"iconv-lite": "^0.4.21",
-		"jquery": "^3.3.1",
-		"jquery-ui": "^1.12.1",
-		"node-notifier": "^5.2.1",
-		"pouchdb": "^6.4.3"
-	}
+  "name": "ToDoList",
+  "version": "0.1.0",
+  "description": "Electron ToDoList",
+  "author": "Darklanx",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Darklanx/ToDoList.git"
+  },
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "electron-debug": "^1.5.0",
+    "iconv-lite": "^0.4.19",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
+    "node-notifier": "^5.2.1",
+    "pouchdb": "^6.4.3"
+  }
 }
