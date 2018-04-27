@@ -43,7 +43,7 @@ function append_ToDo_toTable(text) {
 }
 
 function loadToDos() {
-    let filename = "ToDos.txt"
+    let filename =  __dirname + "/ToDos.txt"
     if (fs.existsSync(filename)) {
         let data = fs.readFileSync(filename, 'utf8').split('\n');
         data.forEach((element, index) => {

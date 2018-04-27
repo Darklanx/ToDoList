@@ -1,5 +1,5 @@
 {
-  "name": "ToDoList",
+  "name": "todolist",
   "version": "0.1.0",
   "description": "Electron ToDoList",
   "author": "Darklanx",
@@ -15,10 +15,20 @@
   "dependencies": {
     "bootstrap": "4.0.0",
     "electron-debug": "^1.5.0",
+    "express": "^4.16.3",
     "iconv-lite": "^0.4.19",
     "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui-bundle": "^1.12.1-migrate",
     "node-notifier": "^5.2.1",
     "pouchdb": "^6.4.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Darklanx/ToDoList/issues"
+  },
+  "homepage": "https://github.com/Darklanx/ToDoList#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
 }
